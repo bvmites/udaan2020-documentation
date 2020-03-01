@@ -11,7 +11,6 @@ import { LoginPage } from '@/LoginPage';
 class App extends React.Component {
     constructor(props) {
         super(props);
-
         this.state = {
             currentUser: null,
             isAdmin: false
@@ -47,7 +46,7 @@ class App extends React.Component {
                     <div className="jumbotron" >
                         <div className="container">
                             <div className="row">
-                                <div className="col-md-6 offset-md-3">
+                                <div >
                                     <PrivateRoute exact path="/" component={HomePage} />
                                     <PrivateRoute path="/admin" roles={[Role.Admin]} component={AdminPage} />
                                     <Route path="/login" component={LoginPage} />

@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { userService, authenticationService } from '@/_services';
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 class HomePage extends React.Component {
     constructor(props) {
@@ -8,8 +9,10 @@ class HomePage extends React.Component {
 
         this.state = {
             currentUser: authenticationService.currentUserValue,
-            userFromApi: null
+            userFromApi: null,
+            receipt: [{name:"",phone:"",event:""}],
         };
+
     }
 
     componentDidMount() {
@@ -19,23 +22,77 @@ class HomePage extends React.Component {
 
     render() {
         const { currentUser, userFromApi } = this.state;
+        let {receipt}=this.state;
+        const handleSubmit = (e) => {
+            e.preventDefault();
+        };
+        const addParticipant = (e) => {
+            this.setState((prevState) => ({
+                receipt: [...prevState.receipt, {name:"", phone:"",event:""}],
+            }));
+        };
+
+        const handleChange = (e) => {
+            if (["name", "phone","event"].includes(e.target.className) ) {
+                let receipt = [...this.state.receipt]
+                receipt[e.target.dataset.id][e.target.className] = e.target.value
+                this.setState({ receipt }, () => console.log(this.state.receipt))
+            } else {
+                this.setState({ [e.target.name]: e.target.value })
+            }
+        }
         return (
             <div>
-                <h1>Home</h1>
-                <p>You're logged in with React & JWT!!</p>
-                <p>Your role is: <strong>{currentUser.role}</strong>.</p>
-                <p>This page can be accessed by all authenticated users.</p>
-                <div>
-                    Current user from secure api end point:
-                    {userFromApi &&
-                        <ul>
-                            <li>{userFromApi.firstName} {userFromApi.lastName}</li>
-                        </ul>
+                <p>Your role is: <strong>Data Entry Operator</strong>. You can add participants</p>
+                <p>Try not to make mistakes.</p>
+                <Form onChange={handleChange} onSubmit={handleSubmit} >
+                    <FormGroup >
+                    <Label htmlFor="Receipt Number">Receipt Number</Label>
+                    <Input type="text" name="Receipt Number" id="rnumber" />
+
+                    {
+                        receipt.map((val, idx)=> {
+                            let receiptId = `receipt-${idx}`, nameId = `age-${idx}`, phoneId = `phone-${idx}` , eventId = `event-${idx}`
+                            return (
+                                <div key={idx}>
+                                    <Label htmlFor={receiptId}>{`Participant no #${idx + 1}`}</Label>
+                                    <Input
+                                        type="text"
+                                        name={nameId}
+                                        data-id={idx}
+                                        id={receiptId}
+                                        className="name"
+                                    />
+                                    <Label htmlFor={phoneId}>Phone</Label>
+                                    <Input
+                                        type="int"
+                                        name={phoneId}
+                                        data-id={idx}
+                                        id={phoneId}
+                                        className="phone"
+                                    />
+                                    <Label htmlFor={eventId}>Event</Label>
+                                    <Input
+                                        type="select"
+                                        name={phoneId}
+                                        data-id={idx}
+                                        id={phoneId}
+                                        className="phone"
+                                    />
+                                </div>
+                            )
+                        })
                     }
-                </div>
+                    <Button onClick={addParticipant} className="">Add New Participant</Button>
+                    <input type="submit" value="Submit" />
+                    </FormGroup>
+                </Form>
             </div>
         );
     }
+
+
+
 }
 
 export { HomePage };
