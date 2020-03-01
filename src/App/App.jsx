@@ -44,7 +44,7 @@ class App extends React.Component {
                             </div>
                         </nav>
                     }
-                    <div className="jumbotron">
+                    <div className="jumbotron" >
                         <div className="container">
                             <div className="row">
                                 <div className="col-md-6 offset-md-3">
