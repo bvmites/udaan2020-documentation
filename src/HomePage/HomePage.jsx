@@ -12,7 +12,7 @@ class HomePage extends React.Component {
             currentUser: authenticationService.currentUserValue,
             userFromApi: null,
             receipt: [{name:"",phone:"",event:"",date:"",branch:"",total:""}],
-        };
+        }; 
 
     }
 
