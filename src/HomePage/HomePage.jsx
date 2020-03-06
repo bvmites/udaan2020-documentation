@@ -99,58 +99,58 @@ class HomePage extends React.Component {
                                 <tr align="center">
                                     <th scope="row">1</th>
 
-                                    <td> <Input type="checkbox" /></td>
-                                    <td> <Input type="checkbox" /></td>
-                                    <td> <Input type="checkbox" /></td>
-                                    <td> <Input type="checkbox" /></td>
-                                    <td> <Input type="checkbox" /></td>
-                                    <td> <Input type="checkbox" /></td>
-                                    <td> <Input type="checkbox" /></td>
-                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" id="CE1"/></td>
+                                    <td> <Input type="checkbox" id="CP/IT1"/></td>
+                                    <td> <Input type="checkbox" id="EC/EL1"/></td>
+                                    <td> <Input type="checkbox" id="EE1"/></td>
+                                    <td> <Input type="checkbox" id="ME/PE1"/></td>
+                                    <td> <Input type="checkbox" id="NT1"/></td>
+                                    <td> <Input type="checkbox" id="CL1"/></td>
+                                    <td> <Input type="checkbox" id="WS1"/></td>
                                 </tr>
                                 <tr align="center">
                                     <th scope="row">2</th>
-                                    <td> <Input type="checkbox" /></td>
-                                    <td> <Input type="checkbox" /></td>
-                                    <td> <Input type="checkbox" /></td>
-                                    <td> <Input type="checkbox" /></td>
-                                    <td> <Input type="checkbox" /></td>
-                                    <td> <Input type="checkbox" /></td>
-                                    <td> <Input type="checkbox" /></td>
-                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" id="CE2"/></td>
+                                    <td> <Input type="checkbox" id="CP/IT2"/></td>
+                                    <td> <Input type="checkbox" id="EC/EL2"/></td>
+                                    <td> <Input type="checkbox" id="EE2"/></td>
+                                    <td> <Input type="checkbox" id="ME/PE2"/></td>
+                                    <td> <Input type="checkbox" id="NT2"/></td>
+                                    <td> <Input type="checkbox" id="CL2"/></td>
+                                    <td> <Input type="checkbox" id="WS2"/></td>
                                 </tr>
                                 <tr align="center">
                                     <th scope="row">3</th>
-                                    <td> <Input type="checkbox" /></td>
-                                    <td> <Input type="checkbox" /></td>
-                                    <td> <Input type="checkbox" /></td>
-                                    <td> <Input type="checkbox" /></td>
-                                    <td> <Input type="checkbox" /></td>
-                                    <td> <Input type="checkbox" /></td>
-                                    <td> <Input type="checkbox" /></td>
-                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" id="CE3"/></td>
+                                    <td> <Input type="checkbox" id="CP/IT3"/></td>
+                                    <td> <Input type="checkbox" id="EC/EL3"/></td>
+                                    <td> <Input type="checkbox" id="EE3"/></td>
+                                    <td> <Input type="checkbox" id="ME/PE3"/></td>
+                                    <td> <Input type="checkbox" id="NT3"/></td>
+                                    <td> <Input type="checkbox" id="CL3"/></td>
+                                    <td> <Input type="checkbox" id="WS3"/></td>
                                 </tr>
                                 <tr align="center">
                                     <th scope="row">4</th>
-                                    <td> <Input type="checkbox" /></td>
-                                    <td> <Input type="checkbox" /></td>
-                                    <td> <Input type="checkbox" /></td>
-                                    <td> <Input type="checkbox" /></td>
-                                    <td> <Input type="checkbox" /></td>
-                                    <td> <Input type="checkbox" /></td>
-                                    <td> <Input type="checkbox" /></td>
-                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" id="CE4"/></td>
+                                    <td> <Input type="checkbox" id="CP/IT4"/></td>
+                                    <td> <Input type="checkbox" id="EC/EL4"/></td>
+                                    <td> <Input type="checkbox" id="EE4"/></td>
+                                    <td> <Input type="checkbox" id="ME/PE4"/></td>
+                                    <td> <Input type="checkbox" id="NT4"/></td>
+                                    <td> <Input type="checkbox" id="CL4"/></td>
+                                    <td> <Input type="checkbox" id="WS4"/></td>
                                 </tr>
                                 <tr align="center">
                                     <th scope="row">5</th>
-                                    <td> <Input type="checkbox" /></td>
-                                    <td> <Input type="checkbox" /></td>
-                                    <td> <Input type="checkbox" /></td>
-                                    <td> <Input type="checkbox" /></td>
-                                    <td> <Input type="checkbox" /></td>
-                                    <td> <Input type="checkbox" /></td>
-                                    <td> <Input type="checkbox" /></td>
-                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" id="CE5"/></td>
+                                    <td> <Input type="checkbox" id="CP/IT5"/></td>
+                                    <td> <Input type="checkbox" id="EC/EL5"/></td>
+                                    <td> <Input type="checkbox" id="EE5"/></td>
+                                    <td> <Input type="checkbox" id="ME/PE5"/></td>
+                                    <td> <Input type="checkbox" id="NT5"/></td>
+                                    <td> <Input type="checkbox" id="CL5"/></td>
+                                    <td> <Input type="checkbox" id="WS5"/></td>
                                 </tr>
                                 </tbody>
                             </Table>
