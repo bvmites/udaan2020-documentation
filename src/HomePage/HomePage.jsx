@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
 import { userService, authenticationService } from '@/_services';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, FormText ,Container, Row, Col , Table } from 'reactstrap';
+import { AvField, } from 'availity-reactstrap-validation';
 
 class HomePage extends React.Component {
     constructor(props) {
@@ -10,7 +11,7 @@ class HomePage extends React.Component {
         this.state = {
             currentUser: authenticationService.currentUserValue,
             userFromApi: null,
-            receipt: [{name:"",phone:"",event:""}],
+            receipt: [{name:"",phone:"",event:"",date:"",branch:"",total:""}],
         };
 
     }
@@ -26,67 +27,141 @@ class HomePage extends React.Component {
         const handleSubmit = (e) => {
             e.preventDefault();
         };
-        const addParticipant = (e) => {
-            this.setState((prevState) => ({
-                receipt: [...prevState.receipt, {name:"", phone:"",event:""}],
-            }));
-        };
-
-        const handleChange = (e) => {
-            if (["name", "phone","event"].includes(e.target.className) ) {
-                let receipt = [...this.state.receipt]
-                receipt[e.target.dataset.id][e.target.className] = e.target.value
-                this.setState({ receipt }, () => console.log(this.state.receipt))
-            } else {
-                this.setState({ [e.target.name]: e.target.value })
-            }
-        }
         return (
             <div>
-                <p>Your role is: <strong>Data Entry Operator</strong>. You can add participants</p>
-                <p>Try not to make mistakes.</p>
-                <Form onChange={handleChange} onSubmit={handleSubmit} >
-                    <FormGroup >
-                    <Label htmlFor="Receipt Number">Receipt Number</Label>
-                    <Input type="text" name="Receipt Number" id="rnumber" />
+                <p>Your role is: <strong>Documentation Team</strong>. You can add participants</p>
+                <Container fluid={true}>
+                <Form  onSubmit={handleSubmit} >
+                    <FormGroup>
+                        <Row>
+                            <Col sm="4">
+                                <Label htmlFor="Receipt Number">R No:</Label>
+                                <Input type="text" name="Receipt Number" id="rnumber" />
+                            </Col>
+                            <Col xs="6" sm="4">
+                                <Label htmlFor="date">Date:</Label>
+                                <Input type="date" name="date" id="date"/>
+                            </Col>
+                            <Col xs="6" sm="4">
+                                <Label htmlFor="phone">Phone:</Label>
+                                <Input type="phone" name="phone" id="phone"/>
+                            </Col>
+                            <Col sm="4">
+                            <Label htmlFor="email">Email:</Label>
+                            <Input type="email" name="email" id="email"/>
+                            </Col>
+                            <Col sm="4">
+                                <Label htmlFor="name">Name:</Label>
+                                <Input type="text" name="name" id="name" />
+                            </Col>
+                            <Col xs="auto">
+                                <Label htmlFor="branch">Branch Name:</Label>
+                                <Input type="select" name="branch" id="branch">
+                                    <option>EC</option>
+                                    <option>EL</option>
+                                    <option>IT</option>
+                                    <option>PR</option>
+                                    <option>CP</option>
+                                    <option>CI</option>
+                                    <option>Other</option>
+                                </Input>
+                            </Col>
+                            <Col xs="auto">
+                                <Label htmlFor="year">Year</Label>
+                                <Input type="select" name="year" id="year">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
 
-                    {
-                        receipt.map((val, idx)=> {
-                            let receiptId = `receipt-${idx}`, nameId = `age-${idx}`, phoneId = `phone-${idx}` , eventId = `event-${idx}`
-                            return (
-                                <div key={idx}>
-                                    <Label htmlFor={receiptId}>{`Participant no #${idx + 1}`}</Label>
-                                    <Input
-                                        type="text"
-                                        name={nameId}
-                                        data-id={idx}
-                                        id={receiptId}
-                                        className="name"
-                                    />
-                                    <Label htmlFor={phoneId}>Phone</Label>
-                                    <Input
-                                        type="int"
-                                        name={phoneId}
-                                        data-id={idx}
-                                        id={phoneId}
-                                        className="phone"
-                                    />
-                                    <Label htmlFor={eventId}>Event</Label>
-                                    <Input
-                                        type="select"
-                                        name={phoneId}
-                                        data-id={idx}
-                                        id={phoneId}
-                                        className="phone"
-                                    />
-                                </div>
-                            )
-                        })
-                    }
-                    <Button onClick={addParticipant} className="">Add New Participant</Button>
-                    <input type="submit" value="Submit" />
+                                </Input>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <p>Select The Events the Participant has enrolled in</p>
+                        </Row>
+                        <Row>
+                            <Table bordered striped>
+                                <thead>
+                                <tr>
+                                    <th >#</th>
+                                    <th >CE</th>
+                                    <th >CP/IT</th>
+                                    <th >EC/EL</th>
+                                    <th >EE</th>
+                                    <th >ME/PE</th>
+                                    <th >NT</th>
+                                    <th >CL</th>
+                                    <th >WS</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr >
+                                    <th scope="row">1</th>
+
+                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" /></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" /></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" /></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" /></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" /></td>
+                                    <td> <Input type="checkbox" /></td>
+                                </tr>
+                                </tbody>
+                            </Table>
+                        </Row>
+                        <Row>
+                        <input type="submit" value="Submit" />
+                        </Row>
+
                     </FormGroup>
                 </Form>
+                </Container>
             </div>
         );
     }
