@@ -83,7 +83,7 @@ class HomePage extends React.Component {
                         <Row>
                             <Table bordered striped>
                                 <thead>
-                                <tr>
+                                <tr align="center">
                                     <th >#</th>
                                     <th >CE</th>
                                     <th >CP/IT</th>
@@ -96,7 +96,7 @@ class HomePage extends React.Component {
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr >
+                                <tr align="center">
                                     <th scope="row">1</th>
 
                                     <td> <Input type="checkbox" /></td>
@@ -108,7 +108,7 @@ class HomePage extends React.Component {
                                     <td> <Input type="checkbox" /></td>
                                     <td> <Input type="checkbox" /></td>
                                 </tr>
-                                <tr>
+                                <tr align="center">
                                     <th scope="row">2</th>
                                     <td> <Input type="checkbox" /></td>
                                     <td> <Input type="checkbox" /></td>
@@ -119,7 +119,7 @@ class HomePage extends React.Component {
                                     <td> <Input type="checkbox" /></td>
                                     <td> <Input type="checkbox" /></td>
                                 </tr>
-                                <tr>
+                                <tr align="center">
                                     <th scope="row">3</th>
                                     <td> <Input type="checkbox" /></td>
                                     <td> <Input type="checkbox" /></td>
@@ -130,7 +130,7 @@ class HomePage extends React.Component {
                                     <td> <Input type="checkbox" /></td>
                                     <td> <Input type="checkbox" /></td>
                                 </tr>
-                                <tr>
+                                <tr align="center">
                                     <th scope="row">4</th>
                                     <td> <Input type="checkbox" /></td>
                                     <td> <Input type="checkbox" /></td>
@@ -141,7 +141,7 @@ class HomePage extends React.Component {
                                     <td> <Input type="checkbox" /></td>
                                     <td> <Input type="checkbox" /></td>
                                 </tr>
-                                <tr>
+                                <tr align="center">
                                     <th scope="row">5</th>
                                     <td> <Input type="checkbox" /></td>
                                     <td> <Input type="checkbox" /></td>
